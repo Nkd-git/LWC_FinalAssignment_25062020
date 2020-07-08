@@ -1,0 +1,24 @@
+<aura:component implements="lightning:homeTemplate" description="A custom template for LWC POC">
+    <aura:attribute name="header" type="Aura.Component[]" />
+    <aura:attribute name="left" type="Aura.Component[]" />
+    <aura:attribute name="right" type="Aura.Component[]" />
+
+    <div>
+        <lightning:layout pullToBoundary="small">
+            <lightning:layoutItem flexibility="grow"
+                                  size="12" class="slds-m-right_small slds-p-top_small" padding="around-small">
+                {!v.header}
+            </lightning:layoutItem>
+        </lightning:layout>
+        <lightning:layout pullToBoundary="small">
+            <lightning:layoutItem size="8" flexibility="auto"
+                                  class="slds-p-top_small" padding="around-small">
+                {!v.left}
+            </lightning:layoutItem>
+            <lightning:layoutItem size="4" flexibility="auto,grow" class="slds-p-top_small" padding="around-small">
+                {!v.right}
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+    
+</aura:component>

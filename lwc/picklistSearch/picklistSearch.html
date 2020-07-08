@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="Search Account">
+        <template if:true={typeOptions}>
+            <div class="slds-align_absolute-center">
+                <lightning-layout vertical-align="end">
+                    <lightning-layout-item flexibility="auto">
+                        <div class="slds-align_absolute-center slds-p-bottom_large">
+                            <lightning-combobox name="Type Values" value={selectedValue} placeholder="All Types"
+                                options={typeOptions} onchange={handleChange}>
+                            </lightning-combobox>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item class="slds-p-left_x-small" flexibility="auto">
+                        <div class="slds-align_absolute-center slds-p-bottom_large">
+                            <lightning-button disabled={disabled} variant="brand" label="Search" onclick={handleSearch}>
+                            </lightning-button>
+                        </div>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+        </template>
+        <template if:false={typeOptions}>
+            <div class="backgroundInverse">
+                <lightning-spinner alternative-text="Loading" variant="brand"></lightning-spinner>
+            </div>
+        </template>
+        <template if:true={error}>
+            <p class="slds-truncate" title="Error" style="color:red;">{errorMessage}</p>
+        </template>
+    </lightning-card>
+</template>

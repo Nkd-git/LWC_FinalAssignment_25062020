@@ -1,0 +1,25 @@
+<template>
+    <lightning-card>
+        <template if:true={accounts}>
+            <template if:true={numberOfAccounts}>
+                <lightning-layout multiple-rows="true">
+                    <template for:each={accounts} for:item="acc">
+                        <c-card-component key={acc.Id} account={acc}></c-card-component>
+                    </template>
+                </lightning-layout>
+            </template>
+            <template if:false={numberOfAccounts}>
+                <p class="slds-truncate slds-align_absolute-center" title="No Accounts" style="color:red;">No Accounts
+                    Found</p>
+            </template>
+        </template>
+        <template if:false={accounts}>
+            <div class="backgroundInverse">
+                <lightning-spinner alternative-text="Loading" variant="brand"></lightning-spinner>
+            </div>
+        </template>
+        <template if:true={error}>
+            <p class="slds-truncate" title="Error" style="color:red;">{errorMessage}</p>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,8 @@
+<template>
+    <c-picklist-search onpicklistselect={handleSelectedValue}></c-picklist-search>
+    <template if:true={pickListValueSelected}>
+        <div class="slds-p-top_x-small">
+            <c-search-results account-type={pickListValueSelected}></c-search-results>
+        </div>
+    </template>
+</template>

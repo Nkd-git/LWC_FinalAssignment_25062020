@@ -1,0 +1,18 @@
+<design:component label="Custom Three Region Home Page Template">
+    <flexipage:template >
+        <!-- The default width for the "left" region is "MEDIUM". In tablets,
+        the width is "SMALL" -->
+            <flexipage:region name="left" label="Left Region" defaultWidth="Large">
+                <flexipage:formfactor type="Large" width="Large" />
+            </flexipage:region>
+            <flexipage:region name="right" label="Right Region" defaultWidth="Medium">
+                <flexipage:formfactor type="Large" width="Medium" />
+        </flexipage:region>
+            <flexipage:region name="header" label="Header Region" defaultWidth="Large">
+                <flexipage:formfactor type="Large" width="Large" />
+        </flexipage:region>
+       </flexipage:template>
+       <design:supportedFormFactors>
+        <design:supportedFormFactor type="Large"/>
+    </design:supportedFormFactors>
+</design:component>
